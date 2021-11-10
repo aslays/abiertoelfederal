@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Inscripcion Abierto El Federal</title>
+</head>
+
+<body>
+    <div class="container" id="advanced-search-form">
+        <h2>Datos de Inscripción</h2>
+        <form action="registro.php" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre">
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" placeholder="Apellido" id="apellido" name="apellido">
+            </div>
+            <div class="form-group">
+                <label for="matricula">Matricula</label>
+                <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula">
+            </div>
+            <div class="form-group">
+                <label for="handicap">Handicap</label>
+                <input type="number" class="form-control" placeholder="Handicap" id="handicap" name="handicap">
+            </div>
+            <div class="form-group">
+                <label for="nacimiento">Fecha de Nacimiento</label>
+                <input type="text" class="form-control" placeholder="dd-mm-aaaa" id="nacimiento" name="nacimiento">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="club">Club</label>
+                <input type="text" class="form-control" placeholder="Club" id="club" name="club">
+            </div>
+            <div class="form-group">
+                <label>Categoria</label>
+                <div class="radio">
+                    <label class="radio-inline">
+                        <input type="radio" name="caballero" value="1">Caballeros</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="caballero" value="0">Damas</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label> Menor de 21 años</label>
+                <div class="radio">
+                    <label class="radio-inline">
+                        <input type="radio" name="menor" value="1">Si</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="menor" value="0">No</label>
+                </div>
+            </div>
+            <div class="form-group hide" id="transport">
+                <label>Necesita Transporte</label>
+                <div class="radio">
+                    <label class="radio-inline">
+                        <input type="radio" name="transporte" value="1">Si</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="transporte" value="0">No</label>
+                </div>
+            </div>
+            <div class="form-group hide" id="aloj">
+                <label>Necesita Alojamiento</label>
+                <div class="radio">
+                    <label class="radio-inline">
+                        <input type="radio" name="alojamiento" value="1">Si</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="alojamiento" value="0">No</label>
+                </div>
+            </div>
+
+            <!--<div class="form-group">
+                <label for="education">Education</label>
+                <input type="text" class="form-control" placeholder="Education" id="education">
+            </div>-->
+            
+            
+
+
+            <div class="clearfix"></div>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-pencil"></span> Inscribirse</button>
+        </form>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+    $(function() {
+    $('input:radio[name="menor"]').change(function() {
+      //console.log("entra");
+        if ($(this).val() == "1") {
+            //alert("Yo");
+
+            $('#transport').removeClass('hide');
+            $('#aloj').removeClass('hide');
+
+
+        } else {
+            //alert("Ye");
+
+            $('#transport').addClass('hide');
+            $('#aloj').addClass('hide');
+        }
+    });
+    });
+
+
+    </script>
+</body>
+
+</html>
